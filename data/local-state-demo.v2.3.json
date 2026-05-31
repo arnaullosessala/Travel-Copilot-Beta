@@ -19,8 +19,8 @@
     "event-bike-start": "pending",
     "event-bike-photo-agulla": "pending",
     "event-bike-checkpoint-canal": "pending",
-    "event-bike-arrival": "pending",
-    "event-bike-decision": "pending"
+    "event-bike-return-check": "pending",
+    "event-bike-arrival": "pending"
   },
   "dayStates": {
     "day-bike-01": "pending"
@@ -40,10 +40,10 @@
     }
   },
   "decisionStates": {
-    "decision-bike-return": {
+    "decision-bike-safety": {
       "status": "pending",
       "selectedOption": null,
-      "notes": ""
+      "notes": "Pendent: toca una opcio i marca-la com resolta abans de sortir."
     },
     "decision-bike-ai": {
       "status": "pending",
@@ -131,7 +131,7 @@
     {
       "id": "request-demo-bike-summary",
       "title": "Resum de ruta i parada final",
-      "text": "Resumeix el tram pendent fins a Sant Iscle i proposa una accio simple per tancar la prova quan arribem.",
+      "text": "Resumeix la ruta d'anada i tornada, comprova si encaixa en 90 minuts i proposa una accio simple per tancar la prova quan tornem a Zamenhof 30.",
       "status": "draft",
       "priority": "medium",
       "tags": [

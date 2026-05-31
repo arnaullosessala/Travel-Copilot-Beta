@@ -8,14 +8,14 @@
     "name": "Bici Manresa -> Sant Iscle",
     "version": "2.4",
     "origin": "Carrer de Zamenhof 30, Manresa",
-    "destination": "Sant Iscle",
+    "destination": "Sant Iscle i tornada a Manresa",
     "startDate": "2026-05-31",
     "endDate": "2026-05-31",
     "travelers": {
       "adults": 2,
       "children": 1
     },
-    "summary": "Excursio curta de prova: sortir a les 12:00, pedalar aproximadament 1 h 30 min i registrar decisions, tracking, despeses i records."
+    "summary": "Excursio curta d'anada i tornada: sortir a les 12:00, passar per Sant Iscle i tornar a Zamenhof 30 abans de les 13:30."
   },
   "participants": [
     {
@@ -60,8 +60,8 @@
       "id": "day-bike-01",
       "date": "2026-05-31",
       "shortLabel": "D1",
-      "title": "Sortida en bici a Sant Iscle",
-      "goal": "Fer una prova realista d'una ruta curta amb inici a les 12:00, tracking actiu, una pausa, registre de fotos/notes i una decisio final.",
+      "title": "Anada i tornada en bici a Sant Iscle",
+      "goal": "Fer una prova realista de 90 minuts maxims: iniciar tracking a les 12:00, passar per Sant Iscle, tornar a Manresa i guardar el track al diari.",
       "baseArea": "Manresa",
       "status": "pending"
     }
@@ -103,25 +103,25 @@
       "priority": "high",
       "status": "pending",
       "startTime": "12:00",
-      "endTime": "12:10",
+      "endTime": "12:05",
       "placeId": "place-zamenhof-30",
       "routeId": "route-bike-manresa-sant-iscle",
       "trackId": "track-bike-manresa-sant-iscle",
       "instructions": [
-        "Sortir en direccio nord-est i validar que el mapa centra la ruta.",
+        "Sortir en direccio Sant Iscle i validar que el mapa centra la ruta d'anada i tornada.",
         "Fer una foto inicial o una nota rapida al diari."
       ]
     },
     {
       "id": "event-bike-photo-agulla",
       "dayId": "day-bike-01",
-      "title": "Pausa foto i aigua a la zona de l'Agulla",
+      "title": "Pausa curta a la zona de l'Agulla",
       "category": "visit",
       "subtype": "photo-stop",
       "priority": "medium",
       "status": "pending",
-      "startTime": "12:25",
-      "endTime": "12:35",
+      "startTime": "12:20",
+      "endTime": "12:25",
       "placeId": "place-parc-agulla",
       "instructions": [
         "Afegir una entrada de diari amb foto, nota i ubicacio.",
@@ -131,47 +131,51 @@
     {
       "id": "event-bike-checkpoint-canal",
       "dayId": "day-bike-01",
-      "title": "Punt de control al cami del canal",
-      "category": "check",
-      "subtype": "safety",
+      "title": "Arribada i foto a Sant Iscle",
+      "category": "visit",
+      "subtype": "checkpoint",
       "priority": "high",
       "status": "pending",
-      "startTime": "12:50",
-      "endTime": "13:00",
-      "placeId": "place-canal-check",
+      "startTime": "12:40",
+      "endTime": "12:50",
+      "placeId": "place-sant-iscle",
       "instructions": [
-        "Confirmar que el tracking segueix gravant punts.",
-        "Crear una sol.licitud IA: 'resumeix el que falta de ruta i proposa una parada final'."
+        "Fer una foto o nota geolocalitzada al diari.",
+        "Confirmar que encara queda temps per tornar abans de les 13:30."
+      ]
+    },
+    {
+      "id": "event-bike-return-check",
+      "dayId": "day-bike-01",
+      "title": "Control de tornada pel cami del canal",
+      "category": "check",
+      "subtype": "return-progress",
+      "priority": "high",
+      "status": "pending",
+      "startTime": "13:05",
+      "endTime": "13:10",
+      "placeId": "place-canal-check",
+      "trackId": "track-bike-manresa-sant-iscle",
+      "instructions": [
+        "Confirmar que el tracking segueix gravant punts de tornada.",
+        "Crear una sol.licitud IA si cal replanificar els ultims minuts."
       ]
     },
     {
       "id": "event-bike-arrival",
       "dayId": "day-bike-01",
-      "title": "Arribada a Sant Iscle",
+      "title": "Arribada a Zamenhof 30 i tancar track",
       "category": "visit",
       "subtype": "arrival",
       "priority": "critical",
       "status": "pending",
       "startTime": "13:25",
       "endTime": "13:30",
-      "placeId": "place-sant-iscle",
+      "placeId": "place-zamenhof-30",
       "trackId": "track-bike-manresa-sant-iscle",
       "instructions": [
         "Aturar tracking i guardar-lo al diari.",
         "Marcar la ruta com completada i revisar si el resum del dia te sentit."
-      ]
-    },
-    {
-      "id": "event-bike-decision",
-      "dayId": "day-bike-01",
-      "title": "Decidir tornada o final de prova",
-      "category": "decision",
-      "subtype": "return-choice",
-      "priority": "medium",
-      "status": "pending",
-      "startTime": "13:30",
-      "instructions": [
-        "Triar si torneu pedalant, us venen a buscar o tanqueu la prova a Sant Iscle."
       ]
     }
   ],
@@ -207,27 +211,27 @@
   ],
   "decisions": [
     {
-      "id": "decision-bike-return",
-      "title": "Com tornem des de Sant Iscle?",
-      "priority": "medium",
+      "id": "decision-bike-safety",
+      "title": "Sortim ara amb condicions segures?",
+      "priority": "critical",
       "status": "pending",
       "relatedDays": [
         "day-bike-01"
       ],
       "options": [
-        "Tornar pedalant pel mateix cami",
-        "Finalitzar la prova a Sant Iscle",
-        "Demanar recollida"
+        "Sortir amb ruta completa de 90 minuts",
+        "Fer ruta curta i tornar abans",
+        "Ajornar la prova"
       ],
       "selectedOption": null,
-      "recommendation": "Per provar l'app, primer finalitza tracking a Sant Iscle i despres decideix si vols crear un segon tram de tornada.",
+      "recommendation": "Decisio critica abans de pedalar: si hi ha bateria, dades, aigua i condicions bones, tria la ruta completa; si no, retalla o ajorna.",
       "editable": true,
-      "notes": ""
+      "notes": "Edita-la tocant una opcio i despres 'Marcar com resolta'."
     },
     {
       "id": "decision-bike-ai",
       "title": "Aplicar una resposta IA de prova?",
-      "priority": "low",
+      "priority": "medium",
       "status": "pending",
       "relatedDays": [
         "day-bike-01"
@@ -238,7 +242,7 @@
         "Descartar-lo"
       ],
       "selectedOption": null,
-      "recommendation": "Fes una sol.licitud curta i revisa el JSON abans d'aplicar res.",
+      "recommendation": "Fes una sol.licitud curta durant la ruta i revisa el JSON abans d'aplicar res.",
       "editable": true,
       "notes": ""
     }
@@ -266,7 +270,7 @@
   "plansB": [
     {
       "id": "planb-bike-short",
-      "title": "Retallar ruta si fa calor o hi ha cansament",
+      "title": "Retallar ruta si fa calor, cansament o retard",
       "relatedDays": [
         "day-bike-01"
       ],
@@ -274,7 +278,7 @@
       "steps": [
         "Fer pausa a l'Agulla.",
         "Guardar el tracking parcial al diari.",
-        "Convertir l'arribada a Sant Iscle en objectiu opcional."
+        "Convertir Sant Iscle en punt opcional i tornar abans."
       ]
     }
   ],
@@ -321,7 +325,7 @@
         },
         {
           "id": "bike-close-decision",
-          "text": "Tancar decisio de tornada"
+          "text": "Tancar decisio critica de sortida"
         }
       ]
     }
@@ -330,15 +334,18 @@
     {
       "id": "route-bike-manresa-sant-iscle",
       "dayId": "day-bike-01",
-      "label": "Zamenhof 30 -> Sant Iscle",
+      "label": "Zamenhof 30 -> Sant Iscle -> Zamenhof 30",
       "transport": "bike",
       "estimatedDuration": "1 h 30 min",
-      "distance": "8 km aprox.",
+      "distance": "12 km aprox.",
       "places": [
         "place-zamenhof-30",
         "place-parc-agulla",
         "place-canal-check",
-        "place-sant-iscle"
+        "place-sant-iscle",
+        "place-canal-check",
+        "place-parc-agulla",
+        "place-zamenhof-30"
       ],
       "coordinates": [
         [
@@ -360,6 +367,22 @@
         [
           41.7646,
           1.858
+        ],
+        [
+          41.7554,
+          1.8451
+        ],
+        [
+          41.7466,
+          1.8366
+        ],
+        [
+          41.7364,
+          1.8311
+        ],
+        [
+          41.7286,
+          1.8262
         ]
       ],
       "riskNotes": [
@@ -378,17 +401,20 @@
     {
       "id": "track-bike-manresa-sant-iscle",
       "dayId": "day-bike-01",
-      "name": "Track demo bici Manresa - Sant Iscle",
+      "name": "Track demo bici Manresa - Sant Iscle - Manresa",
       "provider": "Travel Copilot demo",
       "difficulty": "facil",
-      "recommendation": "Ruta curta per provar tracking real, pauses i guardat al diari.",
-      "officialDurationOneWay": "1 h 30 min",
+      "recommendation": "Ruta curta d'anada i tornada per provar tracking real, pauses i guardat al diari.",
+      "officialDurationRoundTrip": "1 h 30 min",
       "signalingColor": "#2563eb",
       "places": [
         "place-zamenhof-30",
         "place-parc-agulla",
         "place-canal-check",
-        "place-sant-iscle"
+        "place-sant-iscle",
+        "place-canal-check",
+        "place-parc-agulla",
+        "place-zamenhof-30"
       ],
       "coordinates": [
         [
@@ -422,6 +448,34 @@
         [
           41.7646,
           1.858
+        ],
+        [
+          41.7601,
+          1.8519
+        ],
+        [
+          41.7554,
+          1.8451
+        ],
+        [
+          41.7522,
+          1.8408
+        ],
+        [
+          41.7466,
+          1.8366
+        ],
+        [
+          41.7415,
+          1.8342
+        ],
+        [
+          41.7338,
+          1.8289
+        ],
+        [
+          41.7286,
+          1.8262
         ]
       ],
       "riskNotes": [
@@ -469,7 +523,7 @@
         "lat": 41.7646,
         "lng": 1.858
       },
-      "notes": "Final de la sortida de prova."
+      "notes": "Punt de gir de la sortida de prova."
     }
   ],
   "keyTimes": [
@@ -486,11 +540,15 @@
         },
         {
           "time": "12:25",
-          "label": "Pausa foto"
+          "label": "Pausa Agulla"
+        },
+        {
+          "time": "12:45",
+          "label": "Girar a Sant Iscle"
         },
         {
           "time": "13:30",
-          "label": "Arribada prevista"
+          "label": "Tornada a Manresa"
         }
       ]
     }

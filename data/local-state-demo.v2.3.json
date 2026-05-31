@@ -1,42 +1,152 @@
 {
   "schemaVersion": "2.4",
-  "tripId": "demo-trip",
-  "activeDayId": null,
+  "tripId": "bike-manresa-sant-iscle-test",
+  "activeDayId": "day-bike-01",
   "lastVisitedView": null,
+  "travelMode": "real-trip",
   "checkedItems": {
-    "privacy-no-public-personal-data": false,
-    "privacy-auth-ready": false,
-    "privacy-rls-ready": false
+    "bike-casco": false,
+    "bike-water": false,
+    "bike-battery": false,
+    "bike-location-permission": false,
+    "bike-start-tracking": false,
+    "bike-save-track": false,
+    "bike-add-memory": false,
+    "bike-close-decision": false
   },
   "eventStates": {
-    "event-demo-docs": "pending",
-    "event-demo-route": "pending",
-    "event-demo-return": "pending"
+    "event-bike-ready": "pending",
+    "event-bike-start": "pending",
+    "event-bike-photo-agulla": "pending",
+    "event-bike-checkpoint-canal": "pending",
+    "event-bike-arrival": "pending",
+    "event-bike-decision": "pending"
   },
   "dayStates": {
-    "day-demo-01": "pending",
-    "day-demo-02": "pending",
-    "day-demo-03": "pending"
+    "day-bike-01": "pending"
   },
   "documentStates": {
-    "doc-demo-reservation": {
+    "doc-bike-weather": {
       "status": "pendingUpload",
       "confirmed": false,
       "offlineReady": false,
-      "notes": ""
+      "notes": "Prova: afegir captura o nota del temps abans de sortir."
+    },
+    "doc-bike-map-offline": {
+      "status": "pendingUpload",
+      "confirmed": false,
+      "offlineReady": false,
+      "notes": "Prova: marcar-lo com disponible offline."
     }
   },
   "decisionStates": {
-    "decision-demo-sync": {
+    "decision-bike-return": {
+      "status": "pending",
+      "selectedOption": null,
+      "notes": ""
+    },
+    "decision-bike-ai": {
       "status": "pending",
       "selectedOption": null,
       "notes": ""
     }
   },
   "realCosts": {},
-  "expenses": [],
-  "notes": [],
-  "userRequests": [],
+  "expenses": [
+    {
+      "id": "expense-demo-water",
+      "dayId": "day-bike-01",
+      "label": "Aigua de prova",
+      "category": "menjar",
+      "amount": 1.5,
+      "currency": "EUR",
+      "createdAt": "2026-06-01T10:35:00.000Z",
+      "notes": "Despesa inicial per validar el resum de costos."
+    }
+  ],
+  "notes": [
+    {
+      "id": "note-demo-route-goal",
+      "dayId": "day-bike-01",
+      "text": "Objectiu de prova: validar geolocalitzacio, diari, despeses i revisio IA amb una sortida curta.",
+      "createdAt": "2026-06-01T09:45:00.000Z"
+    }
+  ],
+  "journalEntries": [
+    {
+      "id": "journal-demo-start",
+      "dayId": "day-bike-01",
+      "title": "Memoria temporal inicial",
+      "text": "Entrada de mostra per comprovar que el diari mostra records abans de capturar fotos, audio o tracking real.",
+      "mood": "📍",
+      "location": {
+        "lat": 41.7286,
+        "lng": 1.8262,
+        "capturedAt": "2026-06-01T09:50:00.000Z"
+      },
+      "attachments": [],
+      "createdAt": "2026-06-01T09:50:00.000Z"
+    }
+  ],
+  "participants": [
+    {
+      "id": "participant-adult-1",
+      "name": "Arnau",
+      "kind": "adult",
+      "role": "planner",
+      "hasMobile": true,
+      "birthDate": "",
+      "interests": "Provar tracking, mapa i flux IA.",
+      "wakeUpPreference": "normal",
+      "notes": "Responsable de sortir amb bateria i dades mobils.",
+      "createdAt": "2026-05-31T10:30:00.000Z"
+    },
+    {
+      "id": "participant-adult-2",
+      "name": "Acompanyant",
+      "kind": "adult",
+      "role": "navigator",
+      "hasMobile": true,
+      "birthDate": "",
+      "interests": "Ritme tranquil i fotos.",
+      "wakeUpPreference": "normal",
+      "notes": "Pot rebre avisos i ajudar a validar punts de parada.",
+      "createdAt": "2026-05-31T10:30:00.000Z"
+    },
+    {
+      "id": "participant-child-1",
+      "name": "Menut test",
+      "kind": "child",
+      "role": "kid",
+      "hasMobile": false,
+      "birthDate": "",
+      "interests": "Parades curtes, aigua i fotos.",
+      "wakeUpPreference": "child-assisted",
+      "notes": "Sense mobil propi; avisos assignats als adults.",
+      "createdAt": "2026-05-31T10:30:00.000Z"
+    }
+  ],
+  "currentParticipantId": "participant-adult-1",
+  "userRequests": [
+    {
+      "id": "request-demo-bike-summary",
+      "title": "Resum de ruta i parada final",
+      "text": "Resumeix el tram pendent fins a Sant Iscle i proposa una accio simple per tancar la prova quan arribem.",
+      "status": "draft",
+      "priority": "medium",
+      "tags": [
+        "bici",
+        "tracking",
+        "diari"
+      ],
+      "targetAudience": {
+        "mode": "all",
+        "participantIds": []
+      },
+      "createdAt": "2026-06-01T10:00:00.000Z",
+      "updatedAt": "2026-06-01T10:00:00.000Z"
+    }
+  ],
   "uploadedFileIndex": {},
   "cloudSync": {
     "enabled": false,
@@ -44,13 +154,34 @@
     "lastPushAt": null,
     "lastError": null
   },
+  "trackingConsent": {
+    "gps": false,
+    "grantedAt": null,
+    "disabledAt": null
+  },
+  "recordedTrackDraft": null,
+  "experienceSettings": {
+    "travelMode": "real-trip",
+    "language": "ca",
+    "quickMode": false
+  },
+  "quickPhrases": [
+    {
+      "id": "phrase-bike-incident",
+      "label": "Incidencia ruta",
+      "text": "Hem tingut una incidencia menor a la ruta. Revisa events pendents i proposa una alternativa curta.",
+      "createdAt": "2026-05-31T10:30:00.000Z"
+    }
+  ],
   "overrides": {
     "changedEvents": [],
     "skippedEvents": [],
     "addedEvents": [],
     "activatedPlansB": [],
     "addedDocuments": [],
-    "addedDecisions": []
+    "addedDecisions": [],
+    "appliedPatches": [],
+    "lastAppliedPatch": null
   },
   "updatedAt": null
 }

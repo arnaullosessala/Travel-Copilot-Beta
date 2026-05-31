@@ -1,153 +1,498 @@
 {
   "schemaVersion": "2.4",
   "metadata": {
-    "versionNotes": "v2.4 adds safer document deduplication/deletion, integrated help and mobile-first travel UI refinements."
+    "versionNotes": "Demo de proves per validar una sortida curta en bicicleta, tracking, mapa, diari, documents, decisions, despeses i intercanvi IA per portaretalls."
   },
   "trip": {
-    "id": "demo-trip",
-    "name": "Viatge demo",
+    "id": "bike-manresa-sant-iscle-test",
+    "name": "Bici Manresa -> Sant Iscle",
     "version": "2.4",
-    "origin": "Origen demo",
-    "destination": "Destinació demo",
-    "startDate": "2026-08-01",
-    "endDate": "2026-08-03",
+    "origin": "Carrer de Zamenhof 30, Manresa",
+    "destination": "Sant Iscle",
+    "startDate": "2026-06-01",
+    "endDate": "2026-06-01",
     "travelers": {
       "adults": 2,
-      "children": 2
-    }
+      "children": 1
+    },
+    "summary": "Excursio curta de prova: sortir a les 12:00, pedalar aproximadament 1 h 30 min i registrar decisions, tracking, despeses i records."
   },
+  "participants": [
+    {
+      "id": "participant-adult-1",
+      "name": "Arnau",
+      "kind": "adult",
+      "role": "planner",
+      "hasMobile": true,
+      "birthDate": "",
+      "interests": "Provar tracking, mapa i flux IA.",
+      "wakeUpPreference": "normal",
+      "notes": "Responsable de sortir amb bateria i dades mobils.",
+      "createdAt": "2026-05-31T10:30:00.000Z"
+    },
+    {
+      "id": "participant-adult-2",
+      "name": "Acompanyant",
+      "kind": "adult",
+      "role": "navigator",
+      "hasMobile": true,
+      "birthDate": "",
+      "interests": "Ritme tranquil i fotos.",
+      "wakeUpPreference": "normal",
+      "notes": "Pot rebre avisos i ajudar a validar punts de parada.",
+      "createdAt": "2026-05-31T10:30:00.000Z"
+    },
+    {
+      "id": "participant-child-1",
+      "name": "Menut test",
+      "kind": "child",
+      "role": "kid",
+      "hasMobile": false,
+      "birthDate": "",
+      "interests": "Parades curtes, aigua i fotos.",
+      "wakeUpPreference": "child-assisted",
+      "notes": "Sense mobil propi; avisos assignats als adults.",
+      "createdAt": "2026-05-31T10:30:00.000Z"
+    }
+  ],
   "days": [
     {
-      "id": "day-demo-01",
-      "date": "2026-08-01",
+      "id": "day-bike-01",
+      "date": "2026-06-01",
       "shortLabel": "D1",
-      "title": "Preparació",
-      "goal": "Revisar documents i logística.",
-      "baseArea": "Casa",
-      "status": "pending"
-    },
-    {
-      "id": "day-demo-02",
-      "date": "2026-08-02",
-      "shortLabel": "D2",
-      "title": "Ruta principal",
-      "goal": "Fer una ruta tranquil·la.",
-      "baseArea": "Base demo",
-      "status": "pending"
-    },
-    {
-      "id": "day-demo-03",
-      "date": "2026-08-03",
-      "shortLabel": "D3",
-      "title": "Retorn",
-      "goal": "Tornar sense presses.",
-      "baseArea": "Base demo",
+      "title": "Sortida en bici a Sant Iscle",
+      "goal": "Fer una prova realista d'una ruta curta amb inici a les 12:00, tracking actiu, una pausa, registre de fotos/notes i una decisio final.",
+      "baseArea": "Manresa",
       "status": "pending"
     }
   ],
   "events": [
     {
-      "id": "event-demo-docs",
-      "dayId": "day-demo-01",
-      "title": "Preparar documents",
-      "category": "document",
-      "subtype": "check",
+      "id": "event-bike-ready",
+      "dayId": "day-bike-01",
+      "title": "Preparar bici i activar tracking",
+      "category": "alarm",
+      "subtype": "preparation",
       "priority": "critical",
       "status": "pending",
-      "startTime": "20:00",
+      "startTime": "11:50",
+      "endTime": "12:00",
+      "placeId": "place-zamenhof-30",
+      "audience": {
+        "mode": "adults",
+        "participantIds": []
+      },
+      "assignedParticipantIds": [
+        "participant-adult-1"
+      ],
+      "notifyParticipantIds": [
+        "participant-adult-1",
+        "participant-adult-2"
+      ],
       "instructions": [
-        "En publicació real, els documents privats no van dins /public."
+        "Comprovar casc, aigua, bateria i dades mobils.",
+        "Permetre geolocalitzacio i iniciar tracking abans de sortir."
       ]
     },
     {
-      "id": "event-demo-route",
-      "dayId": "day-demo-02",
-      "title": "Ruta familiar demo",
-      "category": "visit",
-      "subtype": "route",
-      "priority": "medium",
-      "status": "pending",
-      "startTime": "10:00"
-    },
-    {
-      "id": "event-demo-return",
-      "dayId": "day-demo-03",
-      "title": "Retorn demo",
+      "id": "event-bike-start",
+      "dayId": "day-bike-01",
+      "title": "Sortida des de Zamenhof 30",
       "category": "transport",
-      "subtype": "return",
+      "subtype": "bike-start",
       "priority": "high",
       "status": "pending",
-      "startTime": "16:00"
+      "startTime": "12:00",
+      "endTime": "12:10",
+      "placeId": "place-zamenhof-30",
+      "routeId": "route-bike-manresa-sant-iscle",
+      "trackId": "track-bike-manresa-sant-iscle",
+      "instructions": [
+        "Sortir en direccio nord-est i validar que el mapa centra la ruta.",
+        "Fer una foto inicial o una nota rapida al diari."
+      ]
+    },
+    {
+      "id": "event-bike-photo-agulla",
+      "dayId": "day-bike-01",
+      "title": "Pausa foto i aigua a la zona de l'Agulla",
+      "category": "visit",
+      "subtype": "photo-stop",
+      "priority": "medium",
+      "status": "pending",
+      "startTime": "12:25",
+      "endTime": "12:35",
+      "placeId": "place-parc-agulla",
+      "instructions": [
+        "Afegir una entrada de diari amb foto, nota i ubicacio.",
+        "Registrar una despesa petita si compreu aigua o snack."
+      ]
+    },
+    {
+      "id": "event-bike-checkpoint-canal",
+      "dayId": "day-bike-01",
+      "title": "Punt de control al cami del canal",
+      "category": "check",
+      "subtype": "safety",
+      "priority": "high",
+      "status": "pending",
+      "startTime": "12:50",
+      "endTime": "13:00",
+      "placeId": "place-canal-check",
+      "instructions": [
+        "Confirmar que el tracking segueix gravant punts.",
+        "Crear una sol.licitud IA: 'resumeix el que falta de ruta i proposa una parada final'."
+      ]
+    },
+    {
+      "id": "event-bike-arrival",
+      "dayId": "day-bike-01",
+      "title": "Arribada a Sant Iscle",
+      "category": "visit",
+      "subtype": "arrival",
+      "priority": "critical",
+      "status": "pending",
+      "startTime": "13:25",
+      "endTime": "13:30",
+      "placeId": "place-sant-iscle",
+      "trackId": "track-bike-manresa-sant-iscle",
+      "instructions": [
+        "Aturar tracking i guardar-lo al diari.",
+        "Marcar la ruta com completada i revisar si el resum del dia te sentit."
+      ]
+    },
+    {
+      "id": "event-bike-decision",
+      "dayId": "day-bike-01",
+      "title": "Decidir tornada o final de prova",
+      "category": "decision",
+      "subtype": "return-choice",
+      "priority": "medium",
+      "status": "pending",
+      "startTime": "13:30",
+      "instructions": [
+        "Triar si torneu pedalant, us venen a buscar o tanqueu la prova a Sant Iscle."
+      ]
     }
   ],
   "documents": [
     {
-      "id": "doc-demo-reservation",
-      "name": "Reserva demo",
-      "type": "reservation",
+      "id": "doc-bike-weather",
+      "name": "Captura del temps i vent",
+      "type": "weather",
       "status": "pendingUpload",
       "confirmed": false,
       "offlineRequired": true,
       "relatedDays": [
-        "day-demo-02"
+        "day-bike-01"
+      ],
+      "priority": "medium",
+      "requested": true,
+      "notes": "Document de prova: pujar una captura o nota del temps abans de sortir."
+    },
+    {
+      "id": "doc-bike-map-offline",
+      "name": "Mapa o ruta offline",
+      "type": "map",
+      "status": "pendingUpload",
+      "confirmed": false,
+      "offlineRequired": true,
+      "relatedDays": [
+        "day-bike-01"
       ],
       "priority": "high",
       "requested": true,
-      "notes": "Puja documents privats només en local o amb sessió Supabase."
+      "notes": "Serveix per provar documents offline i recordatori abans de ruta."
     }
   ],
   "decisions": [
     {
-      "id": "decision-demo-sync",
-      "title": "Activar sincronització al núvol",
-      "priority": "high",
+      "id": "decision-bike-return",
+      "title": "Com tornem des de Sant Iscle?",
+      "priority": "medium",
       "status": "pending",
-      "relatedDays": [],
+      "relatedDays": [
+        "day-bike-01"
+      ],
       "options": [
-        "Local només",
-        "Supabase privat",
-        "Export ZIP xifrat"
+        "Tornar pedalant pel mateix cami",
+        "Finalitzar la prova a Sant Iscle",
+        "Demanar recollida"
       ],
       "selectedOption": null,
-      "recommendation": "Per producció: Supabase Auth + RLS + Storage privat.",
+      "recommendation": "Per provar l'app, primer finalitza tracking a Sant Iscle i despres decideix si vols crear un segon tram de tornada.",
+      "editable": true,
+      "notes": ""
+    },
+    {
+      "id": "decision-bike-ai",
+      "title": "Aplicar una resposta IA de prova?",
+      "priority": "low",
+      "status": "pending",
+      "relatedDays": [
+        "day-bike-01"
+      ],
+      "options": [
+        "Aplicar patch si es coherent",
+        "Guardar-lo sense aplicar",
+        "Descartar-lo"
+      ],
+      "selectedOption": null,
+      "recommendation": "Fes una sol.licitud curta i revisa el JSON abans d'aplicar res.",
       "editable": true,
       "notes": ""
     }
   ],
   "costs": [
     {
-      "id": "cost-demo-estimate",
-      "category": "demo",
-      "label": "Cost demo estimat",
+      "id": "cost-bike-snack",
+      "category": "menjar",
+      "label": "Aigua o snack de ruta",
       "currency": "EUR",
-      "estimatedAmount": 100,
-      "status": "estimated"
+      "estimatedAmount": 4,
+      "status": "estimated",
+      "notes": "Cost petit per provar despeses estimades i reals."
+    },
+    {
+      "id": "cost-bike-maintenance",
+      "category": "equip",
+      "label": "Cambra o kit reparacio",
+      "currency": "EUR",
+      "estimatedAmount": 8,
+      "status": "optional",
+      "notes": "Cost opcional per provar categories."
     }
   ],
-  "plansB": [],
+  "plansB": [
+    {
+      "id": "planb-bike-short",
+      "title": "Retallar ruta si fa calor o hi ha cansament",
+      "relatedDays": [
+        "day-bike-01"
+      ],
+      "trigger": "Cansament, calor, bateria baixa o problema amb tracking.",
+      "steps": [
+        "Fer pausa a l'Agulla.",
+        "Guardar el tracking parcial al diari.",
+        "Convertir l'arribada a Sant Iscle en objectiu opcional."
+      ]
+    }
+  ],
   "checklists": [
     {
-      "id": "checklist-demo-privacy",
-      "title": "Privacitat abans de publicar",
-      "scope": "trip",
+      "id": "checklist-bike-start",
+      "title": "Abans de pedalar",
+      "scope": "day-bike-01",
       "items": [
         {
-          "id": "privacy-no-public-personal-data",
-          "text": "No publicar dades personals dins /public"
+          "id": "bike-casco",
+          "text": "Casc posat"
         },
         {
-          "id": "privacy-auth-ready",
-          "text": "Configurar Supabase Auth"
+          "id": "bike-water",
+          "text": "Aigua i snack"
         },
         {
-          "id": "privacy-rls-ready",
-          "text": "Aplicar RLS a totes les taules"
+          "id": "bike-battery",
+          "text": "Mobil amb bateria i dades"
+        },
+        {
+          "id": "bike-location-permission",
+          "text": "Permis de geolocalitzacio activat"
+        },
+        {
+          "id": "bike-start-tracking",
+          "text": "Tracking iniciat a les 12:00"
+        }
+      ]
+    },
+    {
+      "id": "checklist-bike-arrival",
+      "title": "En arribar",
+      "scope": "day-bike-01",
+      "items": [
+        {
+          "id": "bike-save-track",
+          "text": "Guardar track al diari"
+        },
+        {
+          "id": "bike-add-memory",
+          "text": "Afegir foto, nota o audio"
+        },
+        {
+          "id": "bike-close-decision",
+          "text": "Tancar decisio de tornada"
         }
       ]
     }
   ],
-  "routeSegments": [],
-  "tracks": [],
-  "places": [],
-  "keyTimes": []
+  "routeSegments": [
+    {
+      "id": "route-bike-manresa-sant-iscle",
+      "dayId": "day-bike-01",
+      "label": "Zamenhof 30 -> Sant Iscle",
+      "transport": "bike",
+      "estimatedDuration": "1 h 30 min",
+      "distance": "8 km aprox.",
+      "places": [
+        "place-zamenhof-30",
+        "place-parc-agulla",
+        "place-canal-check",
+        "place-sant-iscle"
+      ],
+      "coordinates": [
+        [
+          41.7286,
+          1.8262
+        ],
+        [
+          41.7364,
+          1.8311
+        ],
+        [
+          41.7466,
+          1.8366
+        ],
+        [
+          41.7554,
+          1.8451
+        ],
+        [
+          41.7646,
+          1.858
+        ]
+      ],
+      "riskNotes": [
+        "Coordenades aproximades per demo, no navegacio oficial.",
+        "Validar sempre carrils, transit i estat del cami abans de pedalar."
+      ],
+      "links": [
+        {
+          "label": "Obrir zona a OpenStreetMap",
+          "url": "https://www.openstreetmap.org/#map=14/41.747/1.842"
+        }
+      ]
+    }
+  ],
+  "tracks": [
+    {
+      "id": "track-bike-manresa-sant-iscle",
+      "dayId": "day-bike-01",
+      "name": "Track demo bici Manresa - Sant Iscle",
+      "provider": "Travel Copilot demo",
+      "difficulty": "facil",
+      "recommendation": "Ruta curta per provar tracking real, pauses i guardat al diari.",
+      "officialDurationOneWay": "1 h 30 min",
+      "signalingColor": "#2563eb",
+      "places": [
+        "place-zamenhof-30",
+        "place-parc-agulla",
+        "place-canal-check",
+        "place-sant-iscle"
+      ],
+      "coordinates": [
+        [
+          41.7286,
+          1.8262
+        ],
+        [
+          41.7338,
+          1.8289
+        ],
+        [
+          41.7415,
+          1.8342
+        ],
+        [
+          41.7466,
+          1.8366
+        ],
+        [
+          41.7522,
+          1.8408
+        ],
+        [
+          41.7554,
+          1.8451
+        ],
+        [
+          41.7601,
+          1.8519
+        ],
+        [
+          41.7646,
+          1.858
+        ]
+      ],
+      "riskNotes": [
+        "Demo pensat per proves funcionals, no com fitxer GPX validat.",
+        "Si el mobil perd cobertura, desar parcialment el tracking al diari."
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "place-zamenhof-30",
+      "name": "Zamenhof 30",
+      "category": "start",
+      "coordinates": {
+        "lat": 41.7286,
+        "lng": 1.8262
+      },
+      "notes": "Punt d'inici de la prova a Manresa."
+    },
+    {
+      "id": "place-parc-agulla",
+      "name": "Zona Parc de l'Agulla",
+      "category": "pause",
+      "coordinates": {
+        "lat": 41.7466,
+        "lng": 1.8366
+      },
+      "notes": "Parada curta per foto, aigua i registre al diari."
+    },
+    {
+      "id": "place-canal-check",
+      "name": "Control cami del canal",
+      "category": "checkpoint",
+      "coordinates": {
+        "lat": 41.7554,
+        "lng": 1.8451
+      },
+      "notes": "Punt intermig per comprovar tracking i enviar sol.licitud IA."
+    },
+    {
+      "id": "place-sant-iscle",
+      "name": "Sant Iscle",
+      "category": "arrival",
+      "coordinates": {
+        "lat": 41.7646,
+        "lng": 1.858
+      },
+      "notes": "Final de la sortida de prova."
+    }
+  ],
+  "keyTimes": [
+    {
+      "dayId": "day-bike-01",
+      "items": [
+        {
+          "time": "11:50",
+          "label": "Preparar bici"
+        },
+        {
+          "time": "12:00",
+          "label": "Sortida"
+        },
+        {
+          "time": "12:25",
+          "label": "Pausa foto"
+        },
+        {
+          "time": "13:30",
+          "label": "Arribada prevista"
+        }
+      ]
+    }
+  ]
 }

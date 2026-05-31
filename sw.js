@@ -1,4 +1,4 @@
-const CACHE_NAME = "travel-copilot-v3.5.29";
+const CACHE_NAME = "travel-copilot-v3.5.30";
 const BASE_URL = new URL("./", self.registration.scope);
 const APP_SHELL = [
   "./",

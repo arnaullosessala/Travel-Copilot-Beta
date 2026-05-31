@@ -9,8 +9,8 @@
     "version": "2.4",
     "origin": "Carrer de Zamenhof 30, Manresa",
     "destination": "Sant Iscle",
-    "startDate": "2026-06-01",
-    "endDate": "2026-06-01",
+    "startDate": "2026-05-31",
+    "endDate": "2026-05-31",
     "travelers": {
       "adults": 2,
       "children": 1
@@ -58,7 +58,7 @@
   "days": [
     {
       "id": "day-bike-01",
-      "date": "2026-06-01",
+      "date": "2026-05-31",
       "shortLabel": "D1",
       "title": "Sortida en bici a Sant Iscle",
       "goal": "Fer una prova realista d'una ruta curta amb inici a les 12:00, tracking actiu, una pausa, registre de fotos/notes i una decisio final.",

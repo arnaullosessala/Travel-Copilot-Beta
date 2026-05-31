@@ -1,0 +1,153 @@
+{
+  "schemaVersion": "2.4",
+  "metadata": {
+    "versionNotes": "v2.4 adds safer document deduplication/deletion, integrated help and mobile-first travel UI refinements."
+  },
+  "trip": {
+    "id": "demo-trip",
+    "name": "Viatge demo",
+    "version": "2.4",
+    "origin": "Origen demo",
+    "destination": "Destinació demo",
+    "startDate": "2026-08-01",
+    "endDate": "2026-08-03",
+    "travelers": {
+      "adults": 2,
+      "children": 2
+    }
+  },
+  "days": [
+    {
+      "id": "day-demo-01",
+      "date": "2026-08-01",
+      "shortLabel": "D1",
+      "title": "Preparació",
+      "goal": "Revisar documents i logística.",
+      "baseArea": "Casa",
+      "status": "pending"
+    },
+    {
+      "id": "day-demo-02",
+      "date": "2026-08-02",
+      "shortLabel": "D2",
+      "title": "Ruta principal",
+      "goal": "Fer una ruta tranquil·la.",
+      "baseArea": "Base demo",
+      "status": "pending"
+    },
+    {
+      "id": "day-demo-03",
+      "date": "2026-08-03",
+      "shortLabel": "D3",
+      "title": "Retorn",
+      "goal": "Tornar sense presses.",
+      "baseArea": "Base demo",
+      "status": "pending"
+    }
+  ],
+  "events": [
+    {
+      "id": "event-demo-docs",
+      "dayId": "day-demo-01",
+      "title": "Preparar documents",
+      "category": "document",
+      "subtype": "check",
+      "priority": "critical",
+      "status": "pending",
+      "startTime": "20:00",
+      "instructions": [
+        "En publicació real, els documents privats no van dins /public."
+      ]
+    },
+    {
+      "id": "event-demo-route",
+      "dayId": "day-demo-02",
+      "title": "Ruta familiar demo",
+      "category": "visit",
+      "subtype": "route",
+      "priority": "medium",
+      "status": "pending",
+      "startTime": "10:00"
+    },
+    {
+      "id": "event-demo-return",
+      "dayId": "day-demo-03",
+      "title": "Retorn demo",
+      "category": "transport",
+      "subtype": "return",
+      "priority": "high",
+      "status": "pending",
+      "startTime": "16:00"
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc-demo-reservation",
+      "name": "Reserva demo",
+      "type": "reservation",
+      "status": "pendingUpload",
+      "confirmed": false,
+      "offlineRequired": true,
+      "relatedDays": [
+        "day-demo-02"
+      ],
+      "priority": "high",
+      "requested": true,
+      "notes": "Puja documents privats només en local o amb sessió Supabase."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "decision-demo-sync",
+      "title": "Activar sincronització al núvol",
+      "priority": "high",
+      "status": "pending",
+      "relatedDays": [],
+      "options": [
+        "Local només",
+        "Supabase privat",
+        "Export ZIP xifrat"
+      ],
+      "selectedOption": null,
+      "recommendation": "Per producció: Supabase Auth + RLS + Storage privat.",
+      "editable": true,
+      "notes": ""
+    }
+  ],
+  "costs": [
+    {
+      "id": "cost-demo-estimate",
+      "category": "demo",
+      "label": "Cost demo estimat",
+      "currency": "EUR",
+      "estimatedAmount": 100,
+      "status": "estimated"
+    }
+  ],
+  "plansB": [],
+  "checklists": [
+    {
+      "id": "checklist-demo-privacy",
+      "title": "Privacitat abans de publicar",
+      "scope": "trip",
+      "items": [
+        {
+          "id": "privacy-no-public-personal-data",
+          "text": "No publicar dades personals dins /public"
+        },
+        {
+          "id": "privacy-auth-ready",
+          "text": "Configurar Supabase Auth"
+        },
+        {
+          "id": "privacy-rls-ready",
+          "text": "Aplicar RLS a totes les taules"
+        }
+      ]
+    }
+  ],
+  "routeSegments": [],
+  "tracks": [],
+  "places": [],
+  "keyTimes": []
+}

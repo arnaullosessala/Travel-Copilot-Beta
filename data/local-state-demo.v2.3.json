@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "2.4",
+  "tripId": "demo-trip",
+  "activeDayId": null,
+  "lastVisitedView": null,
+  "checkedItems": {
+    "privacy-no-public-personal-data": false,
+    "privacy-auth-ready": false,
+    "privacy-rls-ready": false
+  },
+  "eventStates": {
+    "event-demo-docs": "pending",
+    "event-demo-route": "pending",
+    "event-demo-return": "pending"
+  },
+  "dayStates": {
+    "day-demo-01": "pending",
+    "day-demo-02": "pending",
+    "day-demo-03": "pending"
+  },
+  "documentStates": {
+    "doc-demo-reservation": {
+      "status": "pendingUpload",
+      "confirmed": false,
+      "offlineReady": false,
+      "notes": ""
+    }
+  },
+  "decisionStates": {
+    "decision-demo-sync": {
+      "status": "pending",
+      "selectedOption": null,
+      "notes": ""
+    }
+  },
+  "realCosts": {},
+  "expenses": [],
+  "notes": [],
+  "userRequests": [],
+  "uploadedFileIndex": {},
+  "cloudSync": {
+    "enabled": false,
+    "lastPullAt": null,
+    "lastPushAt": null,
+    "lastError": null
+  },
+  "overrides": {
+    "changedEvents": [],
+    "skippedEvents": [],
+    "addedEvents": [],
+    "activatedPlansB": [],
+    "addedDocuments": [],
+    "addedDecisions": []
+  },
+  "updatedAt": null
+}
